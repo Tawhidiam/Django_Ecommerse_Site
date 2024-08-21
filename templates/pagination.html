@@ -1,0 +1,9 @@
+{% if obj_list.has_previous  %}
+<a href="?page={{ obj_list.previous_page_number }}">Previous</a>
+{% endif %}
+{% for page in paginator.page_range %}
+<a href="?page={{ page }}" class="{% if page == obj_list.number %}active{% endif %}">{{ page }}</a>
+{% endfor %}
+{% if object_list.has_next %}
+<a href="?page={{ obj_list.next_page_number }}">Next</a>
+{% endif %}
